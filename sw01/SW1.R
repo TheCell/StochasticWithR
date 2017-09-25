@@ -11,8 +11,9 @@
 
 # (a) 
 
+setwd("C:/Users/simon/Google Drive/HSLU/STOC/StochasticWithR/sw01/")
 
-data <- read.table(file="C:/Users/simon/Google Drive/HSLU/STOC/Uebungen/sw01_child.txt", sep=",", header=TRUE)
+data <- read.table(file="sw01_child.txt", sep=",", header=TRUE)
 
 # Alternative : Import Dataset von csv-File
 head(data)
