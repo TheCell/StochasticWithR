@@ -3,6 +3,7 @@
 setwd("C:/Users/simon/Google Drive/HSLU/STOC/StochasticWithR/sw02/")
 data <- read.table(file="Schokolade_Nobelpreis.txt", sep=" ", header=TRUE)
 geysir <- read.table(file="geysir.dat", sep=" ", header=TRUE)
+income <- read.table(file="income.dat", sep=" ", header=TRUE)
 schlamm.all <- read.table(file="klaerschlamm.dat", sep=" ", header=TRUE)
 schlamm <- schlamm.all[,-1]
 
@@ -105,3 +106,14 @@ plot(recession.velocity, distance, ylab="Distanz (Megaparsecs)", xlab="Fluchtges
 cor(recession.velocity, distance)
 lm(distance ~ recession.velocity)
 abline(lm(distance ~ recession.velocity))
+
+# Aufgabe 6
+# a
+plot(income[,"Educ"], income[,"Income2005"], ylab="Jahre in Ausbildung", xlab="Einkommen 2005")
+plot(income[,"AFQT"], income[,"Income2005"], ylab="Armed Forces Qualifying Test", xlab="Einkommen 2005")
+
+#b
+lm(income[,"Income2005"] ~ income[,"Educ"])
+
+plot(income[,"Educ"] ,  -40200 + 6451 * income[,"Educ"], type="l", xlab="Anzahl Jahre Schulbildung", ylab="Einkommen")
+cor(income[,"Educ"], income[,"Income2005"])
