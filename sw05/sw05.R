@@ -1,3 +1,12 @@
+# Aufgaben
+# A 5.1
+anzahlLose <- 50
+losWinProb <- 0.2
+wahrscheinlichkeit10Gewinne <- dbinom(10, anzahlLose, losWinProb)
+
+wahrscheinlichkeitHoechstens5Gewinne <- pbinom(5, anzahlLose, losWinProb)
+
+wahrscheinlichkeitmin15Gewinne <- 1 - pbinom(14, anzahlLose, losWinProb)
 
 # Quizfrage Varianz. X
 (0 - 0.8)^2 * 0.5 + (1 - 0.8)^2 * 0.2 + (2 - 0.8)^2 * 0.3
