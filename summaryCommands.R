@@ -38,3 +38,12 @@ abline(lm(preis~seite))
 cor(seite, preis)
 # tief
 cor(methodB[1:19], methodA)
+
+# Grund für Binomial
+#1. Unabhängig
+#2. Habe nur 1 oder 0
+#3. Habe endliche Anzahl Werte
+plot( dbinom(0:10, 10, 0.5) ) # von 0 bis .. jeweils einzelwahrscheinlichkeit
+plot( pbinom(0:10, 10, 0.5) ) # von 0 bis .. Wahrscheinlichkeit aufsummieren
+hist( rbinom(100, 10, 0.5) ) # 100 Ergebnise mit 10 Patienten # Erfolgreich bei Wahrscheinlichkeit 0.5
+qbinom(0.5, 10, 0.5) # q = Quantil, Das ist der Median
