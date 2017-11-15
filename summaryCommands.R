@@ -47,3 +47,9 @@ plot( dbinom(0:10, 10, 0.5) ) # von 0 bis .. jeweils einzelwahrscheinlichkeit
 plot( pbinom(0:10, 10, 0.5) ) # von 0 bis .. Wahrscheinlichkeit aufsummieren
 hist( rbinom(100, 10, 0.5) ) # 100 Ergebnise mit 10 Patienten # Erfolgreich bei Wahrscheinlichkeit 0.5
 qbinom(0.5, 10, 0.5) # q = Quantil, Das ist der Median in dem Fall weil 50% Quantil (0.5)
+
+# todo
+binom.test(25, 100, 0.3, alternative = "greater")
+
+# Keine e-xx Zahlen mehr
+options(scipen = 999)
