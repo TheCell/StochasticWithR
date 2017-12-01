@@ -3,6 +3,7 @@ methodA <- c(2,5,6,7,1,2,3,8,9,4,2,1,6,8,4,3,5,7,8)
 methodB <- seq(0, 50, 2)
 seite <- c(seq(50, 500, 50))
 preis <- c(6.4, 9.5, 15.6, 15.1, 17.8, 23.4, 23.4, 22.5, 26.1, 29.1)
+poissZahlen <- rpois(50, lambda = 5)
 
 #Kennzahlen
 arithmetischesMittel <- mean(methodA)
@@ -47,6 +48,18 @@ plot( dbinom(0:10, 10, 0.5) ) # von 0 bis .. jeweils einzelwahrscheinlichkeit
 plot( pbinom(0:10, 10, 0.5) ) # von 0 bis .. Wahrscheinlichkeit aufsummieren
 hist( rbinom(100, 10, 0.5) ) # 100 Ergebnise mit 10 Patienten # Erfolgreich bei Wahrscheinlichkeit 0.5
 qbinom(0.5, 10, 0.5) # q = Quantil, Das ist der Median in dem Fall weil 50% Quantil (0.5)
+
+# Grund für Poisson-Verterilung
+# n unbekannt bzw. unbeschränkt
+# Zahlen beliebig
+# Regel:
+# lambda > 0
+# Generiert 10 Daten mit verteilung um Lambda
+rpois(10, Lambda = 5)
+# punktWahrscheinlichkeit für jede Zahl bei Verteilung um Lambda
+dpois(poissZahlen, lambda = 5)
+# poisson Wahrscheinlichkeit Kumulativ von 0 bis und mit 4
+ppois(0:4, lambda = 5)
 
 # todo
 binom.test(25, 100, 0.3, alternative = "greater")
