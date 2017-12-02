@@ -63,6 +63,7 @@ ppois(0:4, lambda = 5)
 
 # todo
 binom.test(25, 100, 0.3, alternative = "greater")
+#qnorm()
 
 # Keine e-xx Zahlen mehr
 options(scipen = 999)
