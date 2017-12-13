@@ -1,5 +1,4 @@
 setwd("C:/Users/simon/Google Drive/HSLU/STOC/StochasticWithR/sw11/")
-data <- read.table(file="ironF3.dat", sep=",", header=TRUE)
 
 ## Demonstration Betondruckfestigkeit
 
@@ -90,8 +89,18 @@ mean(sim.mean)
 sd(sim.mean)
 
 
+# Live Voting
 
+n<-200
+# X_1,...,X_n simulieren und in einer n-spaltigen Matrix (mit 1000 Zeilen) anordnen
+sim<-matrix(sample(werte,n*1000,replace=TRUE),ncol=n)   
+#In jeder Matrixzeile Mittelwert berechnen 
+sim.mean<- apply(sim,1,"mean")   
+hist(sim.mean,main=paste("Mittelwerte von",n,"Beobachtungen"))
+qqnorm(sim.mean)
 
+mean(sim.mean)
+sd(sim.mean)
 
 
 
@@ -102,3 +111,31 @@ sd(sim.mean)
 x <- c(16.9, 4.20, 6.70, 8.83, 10.7, 22.4, 1.37, 3.00, 4.82, 4.53, 6.77, 4.81)
 alphak <- (seq(1,12, by=1)-0.5)/12
 qqplot(-log(1-alphak), sort(x), xlab="Theoretische Quantile", ylab="Empirische Quantile")
+
+# Aufgabe 11.3
+iron <- read.table(file="ironF3.dat", header=TRUE)
+summary(iron)
+# a
+boxplot(iron)
+
+# b
+boxplot(log(iron))
+
+# c
+qqnorm(iron[,2])
+# vorsicht, dabei muss dann mean etc.
+# auch mit logarithmus angeschaut werden weil die daten transformiert wurden
+qqnorm(log(iron[,2]))
+
+# d
+mean(iron[,2])
+sd(iron[,2])
+
+# Aufgabe 11.7
+
+# Grenze des Verwerfungsbereiches
+-1.64*1.5/sqrt(12)+70
+
+# 2 seitiger test
+qnorm(0.025)*1.5/sqrt(12)+70
+qnorm(0.975)*1.5/sqrt(12)+70
